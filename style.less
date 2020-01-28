@@ -2,56 +2,74 @@
 @red: #FD9A98;
 @yellow:#FECB00;
 @green:#1FCA21;
-@blocksize:80px;
+@blocksize:55px;
 @gap:10px;
 @guide:rgb(255, 0, 170);
 
 body{
     margin: 0px;
+    
+}
+.main{
+    background-color: #EEEEEE;
 }
 .empty{
      background-color: rgb(255, 0, 0);
+     opacity: 0;
 }
 .guide{
-    border : 2px solid @guide;
+    border : 0px solid @guide;
 }
 .block{
-    border : 2px solid @guide;
+    cursor: default;
     height: @blocksize;
     width: @blocksize;
-
+    margin-top: @gap;
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px;
+    transition: ease-in-out 0.3s;
+}
+.number{
+    font-size: 8px;
+}
+.simbol{
+    font-weight: bold;
+    color: rgb(24, 0, 240);
+}
+.mass{
+    font-size: 10px;
 }
 #number_section{
     display : grid;
-    background-color: blue;
     grid-template-columns: 1fr;
     
     max-width: 100px;
 }
 #blue_section{
     display : grid;
-    background-color: @blue;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
     grid-gap: @gap;
     
 }
 #red_section{
     display : grid;
-    background-color: @red;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-     grid-gap: @gap;
+    grid-template-columns: repeat(10,1fr);
+    grid-gap: @gap;
 }
 #yellow_section{
     display : grid;
-    background-color: @red;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: repeat(6,1fr) ;
     grid-gap: @gap;
+    position: relative;
+    right: 20px;
+    
 }
 #green_section{
     display : grid;
-    background-color: @red;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: repeat(14,1fr) ;
     grid-gap: @gap;
+    width: 700px;
 }
 
 .red_block{
@@ -63,6 +81,42 @@ body{
 .yellow_block{
     background-color: @yellow;
 }
+.green_block{
+    background-color: @green;
+}
+
 .rule_block{
     background-color:blanchedalmond ;
+   text-align: center;
+    color:red;
+}
+.large_rule_block{
+    height: @blocksize;
+    background-color:blanchedalmond ;
+    margin-top: @gap;
+    color:red;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.block:hover{
+    box-shadow: 0px 0px 3px 0px #888888;
+    border-radius:100%;
+
+}
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
 }
